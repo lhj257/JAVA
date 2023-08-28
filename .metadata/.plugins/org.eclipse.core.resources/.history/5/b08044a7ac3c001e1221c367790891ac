@@ -1,0 +1,38 @@
+package exception;
+
+public class PasswordTest {
+	private String password;
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) throws IDFormatException {
+		if (password == null) {
+			throw new IDFormatException("비밀번호는 null일 수 없습니다.");
+		} else if (password.length() < 5) {
+			throw new IDFormatException("비밀번호는 5자 이상 쓰세요.");
+		}
+		this.password = password;
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		IDFormatTest test = new IDFormatTest();
+
+		String userID = null;
+		try {
+			test.setUserID(userID);
+		} catch (IDFormatException e) {
+			System.out.println(e.getMessage());
+		}
+
+		userID = "123456";
+		try {
+			test.setUserID(userID);
+		} catch (IDFormatException e) {
+			System.out.println(e.getMessage());
+		}
+	}
+
+}

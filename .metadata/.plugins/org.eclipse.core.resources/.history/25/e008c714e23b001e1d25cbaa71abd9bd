@@ -1,0 +1,10 @@
+package innerclass;
+
+public class AnonumousInnerTest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
